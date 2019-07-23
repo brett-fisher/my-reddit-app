@@ -1,3 +1,25 @@
-<h1>
-  {{title}}
-</h1>
+<div style="text-align:center">
+  <h1>Find a subreddit</h1>
+
+  <input (input) = "subredditInput = $event.target.value" type="text"/>
+  <button (click)="getSubredditData()">Get subreddit</button>
+
+  <h1>
+    {{ postTitle }}
+  </h1>
+
+  <p>
+    {{ url }}
+  </p>  
+
+  <p>
+      {{ postText }}
+  </p>
+
+  <img [hidden]="img == null || img == 'self'" src="{{ img }}">
+
+  <p>created by brett fisher</p>
+</div>
+
+
+
