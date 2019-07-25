@@ -65,7 +65,7 @@ export class AppComponent {
 
       var replies = r
         .getSubmission(this.submissionId)
-        .expandReplies()
+        .expandReplies(ç)
         .then(r => {
           console.log(r);
         })
