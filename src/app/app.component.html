@@ -1,3 +1,56 @@
-<h1>
-  {{title}}
-</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="app" style="text-align:center">
+      
+
+      <div class="inputComponents">
+        <h1>Subreddit Search</h1>
+        <h3>Enter any subreddit into the search bar to see the newest post!</h3>
+        <input (input) = "subredditInput = $event.target.value" type="text"/>
+        <button type="button" class="btn btn-primary btn-sm" (click)="getSubredditData()">Get subreddit</button>
+      </div>
+      
+      <h1>
+        {{ postTitle }}
+      </h1>
+
+      <p>
+        {{ url }}
+      </p>  
+
+      <p>
+        {{ postText }}
+      </p>
+      
+
+      <img [hidden]="img == null || img == 'self'" src="{{ img }}">
+
+      <h3>Comments:</h3>
+        <ul class="cList" *ngFor="let c of comments">
+          <p>
+          - {{ c }}
+          </p>
+        </ul>
+      
+    </div>
+  </body>
+
+
+
+
+
+
+
+</html>
+
+
+
