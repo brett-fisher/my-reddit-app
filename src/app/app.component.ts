@@ -76,7 +76,6 @@ export class AppComponent {
         r[0].comments.fetchAll().then(obj => {
           for (var i=0; i<obj.length; i++) {
             this.comments[i] = obj[i].body;
-            this.resetComments(this.comments);
           }
         })
       })
